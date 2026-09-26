@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="572b497d83ef4fd0e6b9bf10feaad388" label="Parking Management " max_length="40" name="x_1682115_vehicl_0_parking_management" type="collection">
+        <element label="is Available" max_length="40" name="is_available" type="boolean"/>
+        <element label="Work Notes" max_length="255" name="work_notes" type="journal_input"/>
+        <element choice="3" label="Vehicle Type" max_length="40" name="vehicle_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="2 Wheeler" sequence="0" value="2"/>
+                <element inactive_on_update="false" label="4 Wheeler" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="3 Wheeler" sequence="1" value="3"/>
+                <element inactive_on_update="false" label="Others" sequence="3" value="others"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Assigned to" max_length="40" name="assigned_to" type="string"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <element display="true" label="Parking Slot" mandatory="true" max_length="40" name="parking_slot" type="string" unique="true"/>
+        <index name="index" unique="true">
+            <element name="parking_slot"/>
+        </index>
+    </element>
+</database>
